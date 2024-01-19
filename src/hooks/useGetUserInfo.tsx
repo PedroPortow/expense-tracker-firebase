@@ -1,14 +1,14 @@
 interface UserInfo {
   name: string;
-  profilePhoto: string;
+  profilePic: string;
   userId: string;
-  isAuth: boolean;
+  isAuthenticated: boolean;
 }
 
 export const useGetUserInfo = () => {
   const userInfo = JSON.parse(localStorage.getItem("auth") || '{}') as UserInfo;
 
-  const { name = '', profilePhoto = '', userId = '', isAuth = false } = userInfo;
+  const { name = '', profilePic = '', userId = '', isAuthenticated = false } = userInfo;
 
-  return { name, profilePhoto, userId, isAuth };
+  return { name, profilePic, userId, isAuthenticated };
 };
